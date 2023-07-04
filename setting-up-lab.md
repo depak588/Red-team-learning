@@ -17,3 +17,20 @@ If you don't have the license virtualbox will do the work but i gonna use the vm
 {% embed url="https://www.kali.org/get-kali/" %}
 You can use Parrot Security also.
 {% endembed %}
+
+#### (3-) Downloading windows server iso
+
+{% embed url="https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022" %}
+
+It will give 180 trail which is enough and after that you can reinstall it.
+
+
+
+After that install the virtual machine software and import the linux machine and it give it the memory of 3GB and 50GB of storage and same to the windows machine and both the machine should be selected the NAT in the Network Adaptor Tab.
+
+After this take a complete fresh snapshot of both the machines as if anything goes wrong we can go back to the fresh setup without reinstalling the machine.
+
+Simply right click on the machine and go to snapshot and click take snapshot.
+
+Now your lab is set up and from the next chapter we will start installing the required softwares and will be learning to use them in the various techniques.
+
