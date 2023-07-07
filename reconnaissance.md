@@ -305,6 +305,38 @@ Zone: success
 
 {% embed url="https://github.com/epi052/feroxbuster.git" %}
 
+#### 3-)Nmap
+
+Nmap is a network mapper primarily used to identify the existence of network hosts or devices, ports, services and vulnerabilities. It is the tool of choice for network enumeration and will most likely be the first tool to get detected by network defense devices. While there are ways to do this graphically, learning Nmap from the command line will really help you to better appreciate its capabilities and at the same time help you feel more accustomed to working with a command-line interface (CLI).
+
+An ideal enumeration process is:
+
+* Host Identification
+* Port Identification
+* Service Identification
+* Vulnerability Identification
+* Exploitation
+
+Yes, you can perform these tasks separately or with one command. The point is to keep your attack surface low while being accountable for your traffic. Some commands to perform these tasks are:
+
+```bash
+// nmap -sn 10.0.6.200-254
+
+// nmap -v -T4 -sS -Pn --top-ports 10 10.0.6.200-254 --open
+
+// nmap -v -T4 -sS -Pn --top-ports 10 10.0.6.200-254 --open
+
+// nmap -v -T4 -sV -Pn --top-ports 25 10.0.6.200-254 --open
+
+// nmap -v -T4 -sV -sC -Pn -F 10.0.6.200-254 --open
+
+// nmap -v -T4 -A -p- 10.0.6.200-254 --open --randomize-hosts
+
+// nmap -v -T4 -p 445 --script=smb-vuln-ms10-061 10.0.6.200-254 –open
+
+// nmap -v -T4 -sU -sT -sV -p U:53,11,137,161,T:22,139,445 10.0.6.200-254 --open
+```
+
 {Use can use dnsrecon and amass actively as well as passively.}
 
 
