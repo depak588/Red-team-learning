@@ -209,4 +209,116 @@ amass
 
 {% embed url="https://github.com/owasp-amass/amass.git" %}
 
-### Now let's move over the acive intelligence gathering
+### Now let's move over the active intelligence gathering
+
+
+
+#### 1-) fierce
+
+```bash
+// fierce --domain zonetransfer.me                                                                                        
+NS: nsztm2.digi.ninja. nsztm1.digi.ninja.
+SOA: nsztm1.digi.ninja. (81.4.108.41)
+Zone: success
+{<DNS name @>: '@ 7200 IN SOA nsztm1.digi.ninja. robin.digi.ninja. 2019100801 '
+               '172800 900 1209600 3600\n'
+               '@ 300 IN HINFO "Casio fx-700G" "Windows XP"\n'
+               '@ 301 IN TXT '
+               '"google-site-verification=tyP28J7JAUHA9fw2sHXMgcCC0I6XBmmoVi04VlMewxA"\n'
+               '@ 7200 IN MX 0 ASPMX.L.GOOGLE.COM.\n'
+               '@ 7200 IN MX 10 ALT1.ASPMX.L.GOOGLE.COM.\n'
+               '@ 7200 IN MX 10 ALT2.ASPMX.L.GOOGLE.COM.\n'
+               '@ 7200 IN MX 20 ASPMX2.GOOGLEMAIL.COM.\n'
+               '@ 7200 IN MX 20 ASPMX3.GOOGLEMAIL.COM.\n'
+               '@ 7200 IN MX 20 ASPMX4.GOOGLEMAIL.COM.\n'
+               '@ 7200 IN MX 20 ASPMX5.GOOGLEMAIL.COM.\n'
+               '@ 7200 IN A 5.196.105.14\n'
+               '@ 7200 IN NS nsztm1.digi.ninja.\n'
+               '@ 7200 IN NS nsztm2.digi.ninja.',
+ <DNS name _acme-challenge>: '_acme-challenge 301 IN TXT '
+                             '"6Oa05hbUJ9xSsvYy7pApQvwCUSSGgxvrbdizjePEsZI"',
+ <DNS name _sip._tcp>: '_sip._tcp 14000 IN SRV 0 0 5060 www',
+ <DNS name 14.105.196.5.IN-ADDR.ARPA>: '14.105.196.5.IN-ADDR.ARPA 7200 IN PTR '
+                                       'www',
+ <DNS name asfdbauthdns>: 'asfdbauthdns 7900 IN AFSDB 1 asfdbbox',
+ <DNS name asfdbbox>: 'asfdbbox 7200 IN A 127.0.0.1',
+ <DNS name asfdbvolume>: 'asfdbvolume 7800 IN AFSDB 1 asfdbbox',
+ <DNS name canberra-office>: 'canberra-office 7200 IN A 202.14.81.230',
+ <DNS name cmdexec>: 'cmdexec 300 IN TXT "; ls"',
+ <DNS name contact>: 'contact 2592000 IN TXT "Remember to call or email Pippa '
+                     'on +44 123 4567890 or pippa@zonetransfer.me when making '
+                     'DNS changes"',
+ <DNS name dc-office>: 'dc-office 7200 IN A 143.228.181.132',
+ <DNS name deadbeef>: 'deadbeef 7201 IN AAAA dead:beaf::',
+ <DNS name dr>: 'dr 300 IN LOC 53 20 56.558 N 1 38 33.526 W 0.00m',
+ <DNS name DZC>: 'DZC 7200 IN TXT "AbCdEfG"',
+ <DNS name email>: 'email 2222 IN NAPTR 1 1 "P" "E2U+email" "" '
+                   'email.zonetransfer.me\n'
+                   'email 7200 IN A 74.125.206.26',
+ <DNS name Hello>: 'Hello 7200 IN TXT "Hi to Josh and all his class"',
+ <DNS name home>: 'home 7200 IN A 127.0.0.1',
+ <DNS name Info>: 'Info 7200 IN TXT "ZoneTransfer.me service provided by Robin '
+                  'Wood - robin@digi.ninja. See '
+                  'http://digi.ninja/projects/zonetransferme.php for more '
+                  'information."',
+ <DNS name internal>: 'internal 300 IN NS intns1\ninternal 300 IN NS intns2',
+ <DNS name intns1>: 'intns1 300 IN A 81.4.108.41',
+ <DNS name intns2>: 'intns2 300 IN A 167.88.42.94',
+ <DNS name office>: 'office 7200 IN A 4.23.39.254',
+ <DNS name ipv6actnow.org>: 'ipv6actnow.org 7200 IN AAAA '
+                            '2001:67c:2e8:11::c100:1332',
+ <DNS name owa>: 'owa 7200 IN A 207.46.197.32',
+ <DNS name robinwood>: 'robinwood 302 IN TXT "Robin Wood"',
+ <DNS name rp>: 'rp 321 IN RP robin robinwood',
+ <DNS name sip>: 'sip 3333 IN NAPTR 2 3 "P" "E2U+sip" '
+                 '"!^.*$!sip:customer-service@zonetransfer.me!" .',
+ <DNS name sqli>: 'sqli 300 IN TXT "\' or 1=1 --"',
+ <DNS name sshock>: 'sshock 7200 IN TXT "() { :]}; echo ShellShocked"',
+ <DNS name staging>: 'staging 7200 IN CNAME www.sydneyoperahouse.com.',
+ <DNS name alltcpportsopen.firewall.test>: 'alltcpportsopen.firewall.test 301 '
+                                           'IN A 127.0.0.1',
+ <DNS name testing>: 'testing 301 IN CNAME www',
+ <DNS name vpn>: 'vpn 4000 IN A 174.36.59.154',
+ <DNS name www>: 'www 7200 IN A 5.196.105.14',
+ <DNS name xss>: 'xss 300 IN TXT "\'><script>alert(\'Boo\')</script>"'}
+```
+
+#### 2-) Directory bruteforcing
+
+&#x20;(**ffuf)**
+
+```
+// ffuf -w wordlist.txt -u https://website.com/FUZZ
+```
+
+{% embed url="https://github.com/ffuf/ffuf.git" %}
+
+(dirsearch)
+
+```
+// dirsearch -u https://website.com/     
+```
+
+{% embed url="https://github.com/maurosoria/dirsearch.git" %}
+
+(feroxbuster)
+
+{% embed url="https://github.com/epi052/feroxbuster.git" %}
+
+{Use can use dnsrecon and amass actively as well as passively.}
+
+
+
+**Other tools that could help in recon as listed here-**
+
+{% embed url="https://github.com/projectdiscovery/httpx.git" %}
+
+{% embed url="https://github.com/tomnomnom/httprobe.git" %}
+
+{% embed url="https://bgp.he.net/" %}
+FINDING ASN NUMBER&#x20;
+{% endembed %}
+
+{% embed url="https://crt.sh/" %}
+
+{% embed url="https://censys.io/" %}
