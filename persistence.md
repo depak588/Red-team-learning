@@ -36,6 +36,34 @@ Now from the normal agent we will run a module userland\_schtasks because "persi
 
 <figure><img src=".gitbook/assets/9-3.png" alt=""><figcaption><p>Output </p></figcaption></figure>
 
+{% embed url="https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys" %}
+
 After the schtask is successfully created you can also check that the new agent has high\_privilege by interacting it and type info to see it.
 
 <figure><img src=".gitbook/assets/10.png" alt=""><figcaption><p>High_Integrity User.</p></figcaption></figure>
+
+Now we will create a persistence for the high\_privilege user also. For that we will use the module elevated\_wmi because it is used to create a persistent backdoor on a compromised Windows system by creating a Windows Management Instrumentation (WMI) event subscription that executes a PowerShell command as a privileged user. This module is used to maintain control of a system even after it has been restarted or the user has logged off.
+
+<figure><img src=".gitbook/assets/11.png" alt=""><figcaption></figcaption></figure>
+
+In the Interact tab in the starkiller select the module and set listener to http and change Subname to as you want and click and submit.
+
+<figure><img src=".gitbook/assets/11-1.png" alt=""><figcaption></figcaption></figure>
+
+As you can see in the output the wmi persistence is successfully established.
+
+Or You can also use other module which is "miss\_add\_netuser" module is used to create a persistent backdoor on a compromised Windows system by adding a new user account with administrative privileges. This module is used to maintain control of a system even after it has been restarted or the user has logged off.
+
+<figure><img src=".gitbook/assets/13.png" alt=""><figcaption></figcaption></figure>
+
+Change the **Username** to localhost or any other, and **ComputerName** to the hostname of your agent and click submit.
+
+<figure><img src=".gitbook/assets/13-1.png" alt=""><figcaption></figcaption></figure>
+
+After the module is successfully executed we will restart the victim machine to check that the persistence is working or not.
+
+<figure><img src=".gitbook/assets/14 -final.png" alt=""><figcaption></figcaption></figure>
+
+Here you can see after restarting the victim machine the new agent has called back to the starkiller and there are two high integrity agent because we executed two modules in the high integrity user.
+
+That's all this chapter now we will move forward to the next chapter.
