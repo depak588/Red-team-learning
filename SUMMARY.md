@@ -5,4 +5,5 @@
 * [Reconnaissance](reconnaissance.md)
 * [Exploitation](exploitation/README.md)
   * [Defense Evasion (Method #1)](exploitation/defense-evasion-method-1.md)
+  * [Defense Evasion (Method #2)](exploitation/defense-evasion-method-2.md)
 * [Persistence](persistence.md)
