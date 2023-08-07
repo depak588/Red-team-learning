@@ -7,4 +7,4 @@
   * [Defense Evasion (Method #1)](exploitation/defense-evasion-method-1.md)
   * [Defense Evasion (Method #2)](exploitation/defense-evasion-method-2.md)
 * [Persistence](persistence/README.md)
-  * [Privilege Escalation (Method #1)](persistence/privilege-escalation-method-1.md)
+  * [Linux Privilege Escalation](persistence/linux-privilege-escalation.md)
