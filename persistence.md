@@ -22,11 +22,11 @@ You can check the output from the starkiller also go to agents > select the agen
 
 After that we will use the module privesc\_bypassuac to get the elevated agent
 
-<figure><img src=".gitbook/assets/6 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/6 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 then set the listener to http and type execute. And in some time you will get the elevated agent showing in your starkiller and you can also see in terminal by typing agents.The agent which has the user logo is the elevated agent.
 
-<figure><img src=".gitbook/assets/7 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/7 (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now from the normal agent we will run a module userland\_schtasks because "persistence/userland/schtasks" module is used to create a persistent backdoor on a compromised Windows system by adding a scheduled task that executes a PowerShell command. This module is used to maintain control of a system even after it has been restarted or the user has logged off.
 

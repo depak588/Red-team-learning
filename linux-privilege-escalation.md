@@ -34,15 +34,15 @@ then if is accesssible by the normal user we will generate the a password and re
 
 In this method we will first type **sudo -l** to check the available sudo commands which can be run without the password
 
-<figure><img src=".gitbook/assets/6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/6 (1).png" alt=""><figcaption></figcaption></figure>
 
 then go to [https://gtfobins.github.io/](https://gtfobins.github.io/) and search for any of the commands in this i will be searching for the awk command.
 
-<figure><img src=".gitbook/assets/7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/7 (1).png" alt=""><figcaption></figcaption></figure>
 
 and then copy the sudo one and paste it in terminal and you will get the root shell.
 
-<figure><img src=".gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/8 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### (Method #4)
 
