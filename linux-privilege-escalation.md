@@ -10,13 +10,13 @@ So after setting up the connection check the shadow file is accessible by the no
 
 
 
-<figure><img src=".gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/2 (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 // john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 
-<figure><img src=".gitbook/assets/3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/3 (1).png" alt=""><figcaption></figcaption></figure>
 
 Here you will get the root password and you can login with su root and password.
 
@@ -28,7 +28,7 @@ In this method we will first check the permissions of the passwd file&#x20;
 
 then if is accesssible by the normal user we will generate the a password and replace the root password of the file with ours and then login in the root user.
 
-<figure><img src=".gitbook/assets/5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/5 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### (Method #3)
 

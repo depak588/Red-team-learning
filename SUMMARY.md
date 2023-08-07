@@ -8,3 +8,4 @@
   * [Defense Evasion (Method #2)](exploitation/defense-evasion-method-2.md)
 * [Persistence](persistence.md)
 * [🔥 Linux Privilege Escalation](linux-privilege-escalation.md)
+* [🔥 Windows Privilege Escalation](windows-privilege-escalation.md)
