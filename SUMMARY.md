@@ -6,6 +6,7 @@
 * [Exploitation](exploitation/README.md)
   * [Defense Evasion (Method #1)](exploitation/defense-evasion-method-1.md)
   * [Defense Evasion (Method #2)](exploitation/defense-evasion-method-2.md)
+  * [Linux Defense Evasion (Method #1)](exploitation/linux-defense-evasion-method-1.md)
 * [Persistence](persistence.md)
 * [🔥 Linux Privilege Escalation](linux-privilege-escalation.md)
 * [🔥 Windows Privilege Escalation](windows-privilege-escalation.md)
